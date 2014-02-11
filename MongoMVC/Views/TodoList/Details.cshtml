@@ -1,0 +1,17 @@
+﻿@using MongoDB.Bson
+@using MongoMVC.Models
+@model TodoList
+
+@{
+    ViewBag.Title = "Details";
+}
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id.ToString() })
+    @Html.DisplayForModel()
+}

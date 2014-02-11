@@ -1,0 +1,26 @@
+﻿@using MongoMVC.Models
+@model TodoList
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.EditorForModel()
+
+    <p>
+        <input type="submit" value="Update" />&nbsp;&nbsp;&nbsp;<input class="cancel" type="button" value="Cancel" />
+    </p>
+}
+
+@section docready_scripts
+{
+    jQ('.cancel').click(function (e) { document.location.href = '@Url.Action("Details", new { id = Model.Id })'; });
+}
+
+

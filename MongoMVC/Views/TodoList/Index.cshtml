@@ -1,0 +1,18 @@
+﻿@using MongoMVC.Models
+@model IList<TodoList>
+
+@{
+    ViewBag.Title = "Todo Lists";
+}
+
+@using (Html.BeginForm())
+{
+    <h2>Todo Lists</h2>
+    @Html.ActionLink("Add new", "Create")
+    <ul>
+        @foreach (TodoList tl in Model)
+        {
+            <li>@Html.ActionLink(tl.Name, "Details", new { id = tl.Id })</li>
+        }
+    </ul>
+}

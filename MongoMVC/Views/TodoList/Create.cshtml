@@ -1,0 +1,21 @@
+﻿@using MongoMVC.Models
+@model TodoList
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.EditorForModel()
+
+    <p>
+        <input type="submit" value="Create" />
+    </p>
+}
+
+
