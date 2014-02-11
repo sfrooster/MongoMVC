@@ -28,6 +28,7 @@ namespace MongoMVC.Models
 
         [Display(Name = "Id", Order=0)]
         [Editable(false)]
+        
         public string IdAsString
         {
             get
@@ -44,7 +45,8 @@ namespace MongoMVC.Models
         {
             get
             {
-                if (_client == null) _client = new MongoClient(ConfigurationManager.ConnectionStrings["MongoConnection"].ConnectionString);
+                //if (_client == null) _client = new MongoClient(ConfigurationManager.ConnectionStrings["MongoConnectionWork"].ConnectionString);
+                if (_client == null) _client = new MongoClient(ConfigurationManager.ConnectionStrings["MongoConnectionHome"].ConnectionString); //
                 return _client;
             }
         }

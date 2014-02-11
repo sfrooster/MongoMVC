@@ -11,7 +11,18 @@
 
 @using (Html.BeginForm())
 {
-    @Html.EditorForModel()
+    <div>
+        <label>Id</label>
+        @Html.DisplayFor(t => t.IdAsString)
+    </div>
+    <div>
+        <label>Name</label>
+        @Html.EditorFor(t => t.Name)
+    </div>
+    <div>
+        <label>Created</label>
+        @Html.EditorFor(t => t.Created)
+    </div>
 
     <p>
         <input type="submit" value="Update" />&nbsp;&nbsp;&nbsp;<input class="cancel" type="button" value="Cancel" />
